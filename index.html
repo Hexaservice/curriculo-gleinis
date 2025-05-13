@@ -4,57 +4,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículum Vitae - Gleinis Geyerlin García Machado</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #C2185B;
-            --text-color: #333;
-            --bg-section: #f9f9f9;
-            --font-base: 'Open Sans', sans-serif;
+            --accent-color: #FF6F61;
+            --text-color: #2D3748;
+            --bg-light: #F7F8FA;
+            --bg-alt: #E9EEF4;
+            --font-sans: 'Open Sans', sans-serif;
+            --font-header: 'Montserrat', sans-serif;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: var(--font-base); background: #eee; color: var(--text-color); padding: 20px; }
-        .container { max-width: 800px; margin: auto; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        header { background: var(--primary-color); color: #fff; padding: 30px; display: flex; align-items: center; }
-        header img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-right: 20px; border: 4px solid #fff; }
-        header .info { flex: 1; }
-        header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
-        header p { font-size: 14px; opacity: 0.9; }
-        .section { padding: 25px 30px; border-bottom: 1px solid #ddd; background: var(--bg-section); }
-        .section:nth-child(even) { background: #fff; }
-        .section h2 { font-size: 20px; margin-bottom: 15px; color: var(--primary-color); font-weight: 600; border-left: 4px solid var(--primary-color); padding-left: 10px; }
-        .perfil p { line-height: 1.6; }
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-light);
+            color: var(--text-color);
+            padding: 20px;
+        }
+        .container {
+            max-width: 820px;
+            margin: auto;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: #fff;
+            padding: 50px 30px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        header img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            border: 3px solid #fff;
+        }
+        header .info {
+            flex: 1;
+        }
+        header h1 {
+            font-family: var(--font-header);
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+        }
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .section {
+            padding: 35px 30px;
+            border-bottom: 1px solid #E2E8F0;
+            background: #fff;
+            transition: background 0.3s;
+        }
+        .section:nth-child(even) {
+            background: var(--bg-alt);
+        }
+        .section:hover {
+            background: #fff;
+        }
+        .section h2 {
+            font-family: var(--font-header);
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .section h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 10px;
+            height: 30px;
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
+        .perfil p { margin-bottom: 16px; font-size: 16px; }
         ul { list-style: none; }
-        ul li { margin-bottom: 10px; position: relative; padding-left: 20px; }
-        ul li::before { content: '•'; position: absolute; left: 0; color: var(--primary-color); }
-        .referencias ul li { display: flex; justify-content: space-between; flex-wrap: wrap; }
-        .referencias ul li span { flex: 1; }
-        footer { text-align: center; padding: 20px; font-size: 14px; background: #fafafa; }
+        ul li {
+            margin-bottom: 14px;
+            display: flex;
+            align-items: flex-start;
+        }
+        ul li::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: var(--primary-color);
+            border-radius: 2px;
+            margin-right: 12px;
+            margin-top: 6px;
+        }
+        .referencias ul li {
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .referencias ul li span:first-child {
+            font-weight: 600;
+        }
+        .referencias ul li span:last-child {
+            opacity: 0.85;
+        }
+        .habilidades p {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .habilidades p span {
+            background: var(--accent-color);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .habilidades p span:hover {
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            font-size: 15px;
+            background: var(--bg-light);
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
         @media (max-width: 600px) {
             header { flex-direction: column; text-align: center; }
-            header img { margin: 0 0 15px; }
+            header img { margin-bottom: 20px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <img src="https://github.com/Hexaservice/curriculo-gleinis/blob/4209dda911a14bdfed2238876d9c80e1cba08e89/foto-gleinis.jpeg" alt="Foto Gleinis">
+            <img src="https://raw.githubusercontent.com/Hexaservice/curriculo-gleinis/main/foto-gleinis.jpeg" alt="Foto Gleinis">
             <div class="info">
                 <h1>Gleinis Geyerlin García Machado</h1>
-                <p>V-30.852.620 &bull; Soltera &bull; 25/03/2004</p>
-                <p>0412-9251717 &bull; Turmero, Edo. Aragua, Venezuela</p>
+                <p><strong>V-30.852.620</strong> &bull; <strong>Soltera</strong> &bull; <strong>25/03/2004</strong></p>
+                <p><strong>0412-9251717</strong> &bull; Turmero, Edo. Aragua, Venezuela</p>
             </div>
         </header>
         <div class="section perfil">
             <h2>Perfil Profesional</h2>
-            <p>Persona dinámica, proactiva y responsable con capacidad de adaptación. Excelente atención al cliente, habilidades de comunicación y trabajo en equipo para cumplir objetivos.</p>
+            <p>Persona dinámica, proactiva y responsable con gran capacidad de adaptación ante retos. Destaco por mi atención al detalle, comunicación efectiva y trabajo en equipo para alcanzar objetivos.</p>
         </div>
         <div class="section formacion">
             <h2>Formación Académica</h2>
             <ul>
                 <li><strong>Bachiller en Ciencias</strong> – U.E.N. "Federico Villena", Turmero, Aragua</li>
-                <li>Educación Básica – U.E.E. "Alfonzo Rivas", Turmero, Aragua</li>
+                <li><strong>Educación Básica</strong> – U.E.E. "Alfonzo Rivas", Turmero, Aragua</li>
             </ul>
         </div>
         <div class="section experiencia">
@@ -74,7 +186,14 @@
         </div>
         <div class="section habilidades">
             <h2>Habilidades & Destrezas</h2>
-            <p>Planificación y organización de trabajo; adaptabilidad; atención al público; relaciones interpersonales; comunicación efectiva; trabajo en equipo.</p>
+            <p>
+                <span>Planificación</span>
+                <span>Organización</span>
+                <span>Adaptabilidad</span>
+                <span>Atención al Cliente</span>
+                <span>Comunicación</span>
+                <span>Trabajo en Equipo</span>
+            </p>
         </div>
         <footer>
             Disponibilidad Inmediata
